@@ -1,26 +1,22 @@
 <?php
-// FONCTIONS PHP
+// FONCTIONS de CONVERSION PHP
 define('KELVINVAL', 273.15);
-
 
 function convCelToKel($itemValue)
 {
     $kelvin = $itemValue + KELVINVAL;
     return $kelvin;
 }
-
 function convCelToFar($itemValue)
 {
     $fahrenheit = $itemValue * (9 / 5) + 32;
     return $fahrenheit;
 }
-
 function convFarToKel($itemValue)
 {
     $kelvin = ($itemValue - 32) * 5 / 9 + KELVINVAL;
     return $kelvin;
 }
-
 function convFarToCel($itemValue)
 {
     $celsius = ($itemValue - 32) * 5 / 9;
@@ -36,24 +32,22 @@ function convKelToFar($itemValue)
     $fahrenheit = ($itemValue - KELVINVAL) * 9 / 5 + 32;
     return $fahrenheit;
 }
-var_dump(round(convFarToCel(10), 2));
+
 ?>
 <!-- HTML -->
 <!DOCTYPE html>
 <html lang="fr">
-
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
     <title>Convertisseur de Température</title>
-
 </head>
 
 <body>
-
     <!-- DEBUT DU FORMULAIRE -->
+    <h1 class="m-5 text-center">Convertisseur de température</h1>
     <section class="p-3 mx-5 border-0 bd-example mx-5 border-0 ">
         <form action="" method="post">
             <input type="text" class="form-control mb-3" aria-label="Result" name="item-value">
@@ -78,7 +72,7 @@ var_dump(round(convFarToCel(10), 2));
                 <button class="btn btn-primary" name="button" type="submit" value="Convert">Convertir</button>
             </div>
 
-            <!-- LOGIQUE DE CONVERTION PHP -->
+            <!-- LOGIQUE DE CONVERSION PHP -->
             <?php
             if (isset($_POST['button'])) {
                 $itemValue = $_POST['item-value'];
